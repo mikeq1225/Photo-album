@@ -1,45 +1,46 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import "../styles/AlbumName.css"
+import { getAlbum, getAlbums } from "../actions/albums.js"
 
 export default function(props) {
+  const [album, setAlbum] = useState({})
+  const [pictures, setPictures] = useState([])
+  const [albums, setAlbums] = useState([])
+
+  useEffect(() => {
+    getAlbum(props.match.params.id).then(album => {
+      setPictures(album.pictures)
+      setAlbum(album)
+    })
+    getAlbums().then(albums => setAlbums(albums))
+  }, [props.match.params])
+
   return (
     <div className="picContainer">
-      <h1>album name</h1>
+      <h1>{album.name}</h1>
       <div className="flex">
         <div className="flexDiv">
-          <p>album 1</p>
-          <p>album 2</p>
-          <p>album 3</p>
-          <p>album 4</p>
-          <p>album 5</p>
-          <p>album 6</p>
+          {albums.map(album => (
+            <div key={"album" + album.id}>
+              <Link to={"/album/" + album.id}>
+                <p>{album.name}</p>
+              </Link>
+            </div>
+          ))}
         </div>
         <div className="albumNames">
-          <div>
-            <img src="http://placehold.it/150" />
-            <p>picture name </p>
-          </div>
-          <div>
-            <img src="http://placehold.it/150" />
-            <p>picture name </p>
-          </div>
-          <div>
-            <img src="http://placehold.it/150" />
-            <p>picture name </p>
-          </div>
-          <div>
-            <img src="http://placehold.it/150" />
-            <p>picture name </p>
-          </div>
-          <div>
-            <img src="http://placehold.it/150" />
-            <p>picture name </p>
-          </div>
-          <div>
-            <img src="http://placehold.it/150" />
-            <p>picture name </p>
-          </div>
+          {pictures.map(picture => (
+            <Link
+              to={"/album/picture/" + picture.id}
+              key={"picture" + picture.id}
+            >
+              <div>
+                <img src={picture.url} alt="car" />
+                <p>{picture.name} </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

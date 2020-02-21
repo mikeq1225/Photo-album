@@ -1,6 +1,6 @@
 .picContainer {
   border: 1px solid black;
-  margin: 30px;
+  margin: 30px 0px;
 }
 
 .picContainer h1 {
@@ -23,9 +23,16 @@
   display: flex;
   flex-direction: column;
   width: 150px;
-  align-items: center;
+  padding: 10px 15px;
   justify-items: center;
   border-right: 1px solid black;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
 }
 
 .albumNames {
@@ -34,7 +41,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px 20px;
   justify-items: center;
-  padding: 40px 0px;
+  padding: 40px 20px;
 }
 
 .albumNames div {
@@ -43,4 +50,9 @@
 
 .albumNames p {
   text-align: center;
+}
+
+.albumNames img {
+  width: 250px;
+  height: 200px;
 }

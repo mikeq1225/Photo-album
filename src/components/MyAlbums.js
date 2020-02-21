@@ -1,36 +1,35 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+// import axios from "axios"
 import "../styles/MyAlbums.css"
+import { getAlbums } from "../actions/albums.js"
 
 export default function(props) {
+  const [albums, setAlbums] = useState([])
+
+  // function getAlbums() {
+  //   axios.get("/albums").then(resp => {
+  //     setAlbums(resp.data)
+  //     console.log(resp.data)
+  //   })
+  // }
+
+  useEffect(() => {
+    getAlbums().then(data => setAlbums(data))
+  }, [])
+
   return (
     <div className="albumContainer">
-      <h1>my albums</h1>
+      <h1>mustangs</h1>
       <div className="albumCover">
-        <div>
-          <img src="http://placehold.it/250" />
-          <p>Album Name</p>
-        </div>
-        <div>
-          <img src="http://placehold.it/250" />
-          <p>Album Name</p>
-        </div>
-        <div>
-          <img src="http://placehold.it/250" />
-          <p>Album Name</p>
-        </div>
-        <div>
-          <img src="http://placehold.it/250" />
-          <p>Album Name</p>
-        </div>
-        <div>
-          <img src="http://placehold.it/250" />
-          <p>Album Name</p>
-        </div>
-        <div>
-          <img src="http://placehold.it/250" />
-          <p>Album Name</p>
-        </div>
+        {albums.map(album => (
+          <Link to={"/album/" + album.id} key={"album" + album.id}>
+            <div>
+              <img src={album.coverPhoto} alt="car" />
+              <p>{album.name}</p>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   )
