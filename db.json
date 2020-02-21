@@ -2,68 +2,74 @@
   "albums": [
     {
       "name": "2000 Mustang GT",
+      "coverPhoto": "https://i.ebayimg.com/images/g/9t0AAOSw-W9bGo7W/s-l1600.jpg",
       "id": 1
     },
     {
       "name": "1966 Mustang GT Fastback",
+      "coverPhoto": "https://www.autopartsdb.net/assets/images/ProductImg/8/8213B.JPG",
       "id": 2
     },
     {
       "name": "1993 Mustang GT",
+      "coverPhoto": "https://turn5.scene7.com/is/image/Turn5/383831?wid=810&hei=608&op_usm=0.8,1,10,0",
       "id": 3
     },
     {
       "name": "2020 Mustang GT",
+      "coverPhoto": "https://www.cjponyparts.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/g/o/go20_1.162_1.jpg",
       "id": 4
     },
     {
       "name": "2020 Shelby Mustang GT",
+      "coverPhoto": "https://i.ebayimg.com/images/g/KhAAAOSw6DxeNkKD/s-l400.jpg",
       "id": 5
     },
     {
       "name": "Eleanor",
+      "coverPhoto": "https://www.brandnewmusclecar.com/assets/GONE_IN_60_SECONDS_Logo-Met36326.png",
       "id": 6
     }
   ],
   "pictures": [
     {
-      "name": "Eleanor Front",
+      "name": "Front",
       "url": "https://www.insidehook.com/wp-content/uploads/2019/11/eleanor_hero.jpg?fit=1500%2C1000",
       "albumId": 6,
       "id": 1
     },
     {
-      "name": "Eleanor Passenger Side",
+      "name": "Passenger Side",
       "url": "https://coxaltdriver.files.wordpress.com/2018/01/screen-shot-2018-01-04-at-9-01-43-pm.png?w=640",
       "albumId": 6,
       "id": 2
     },
     {
-      "name": "Eleanor Driver Side",
+      "name": "Driver Side",
       "url": "https://postmediadriving.files.wordpress.com/2019/11/eleanor-ford-mustang-gone-in-60-seconds.jpg?quality=80",
       "albumId": 6,
       "id": 3
     },
     {
-      "name": "Eleanor Driver Front Quarter",
+      "name": "Driver Front Quarter",
       "url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2020/01/640/320/gone6.jpg?ve=1&tl=1",
       "albumId": 6,
       "id": 4
     },
     {
-      "name": "Eleanor Passenger Front Quarter",
+      "name": "Passenger Front Quarter",
       "url": "https://i.auto-bild.de/ir_img/2/4/4/8/0/6/5/Ford-Mustang-Shelby-GT500-Eleanor-Original-474x316-572c3d16416b5a60.jpg",
       "albumId": 6,
       "id": 5
     },
     {
-      "name": "Eleanor Passenger Rear Quarter",
+      "name": "Passenger Rear Quarter",
       "url": "https://cdn1.mecum.com/auctions/fl0120/fl0120-397289/images/03-1566496970662@2x.jpg?1578666406000",
       "albumId": 6,
       "id": 6
     },
     {
-      "name": "Eleanor Driver Rear Quarter",
+      "name": "Driver Rear Quarter",
       "url": "https://www.carscoops.com/wp-content/uploads/2019/11/1967-Ford-Mustang-Eleanor-13.jpg",
       "albumId": 6,
       "id": 7

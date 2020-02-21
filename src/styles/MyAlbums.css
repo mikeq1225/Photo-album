@@ -30,3 +30,13 @@
 .albumCover p {
   text-align: center;
 }
+
+.albumCover img {
+  width: 200px;
+  height: 200px;
+}
+
+.albumCover a {
+  text-decoration: none;
+  color: black;
+}
