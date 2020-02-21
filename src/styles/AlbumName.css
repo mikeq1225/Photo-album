@@ -1,0 +1,46 @@
+.picContainer {
+  border: 1px solid black;
+  margin: 30px;
+}
+
+.picContainer h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: gray;
+  height: 100px;
+  font-size: 40px;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flexDiv {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  align-items: center;
+  justify-items: center;
+  border-right: 1px solid black;
+}
+
+.albumNames {
+  flex-grow: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px 20px;
+  justify-items: center;
+  padding: 40px 0px;
+}
+
+.albumNames div {
+  border: 1px solid black;
+}
+
+.albumNames p {
+  text-align: center;
+}

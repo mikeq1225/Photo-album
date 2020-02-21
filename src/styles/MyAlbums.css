@@ -1,0 +1,32 @@
+.albumContainer {
+  border: 1px solid black;
+  margin: 30px;
+}
+
+.albumContainer h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: gray;
+  height: 100px;
+  font-size: 40px;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+}
+
+.albumCover {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px 20px;
+  justify-items: center;
+  padding: 40px 20px;
+}
+
+.albumCover div {
+  border: 1px solid black;
+}
+
+.albumCover p {
+  text-align: center;
+}
