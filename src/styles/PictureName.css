@@ -2,18 +2,56 @@
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  position: relative;
+  background-color: white;
 }
 
 .picNames h1 {
   margin-top: 30px;
-  width: 600px;
+  width: 700px;
   border: 1px solid black;
   text-align: center;
   padding: 30px;
+  background: gray;
+}
+
+.homeButton {
+  font-size: 40px;
+  position: absolute;
+  top: 55px;
+  left: 60px;
+}
+
+.homeButton:hover {
+  color: gray;
+  transition: 0.3s;
 }
 
 .picNames div img {
-  margin-top: 50px;
-  width: 500px;
-  height: 400px;
+  margin: 50px 0px;
+  width: 700px;
+  height: 500px;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 75px;
+  padding: 0px 40px;
+}
+
+.albumButton {
+  font-size: 40px;
+  position: absolute;
+  top: 60px;
+  left: 900px;
+}
+
+.albumButton:hover,
+.arrow:hover {
+  color: gray;
+  transition: 0.3s;
 }

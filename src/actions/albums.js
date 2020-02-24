@@ -38,3 +38,16 @@ export function getPhoto(id) {
       })
   })
 }
+
+export function getPhotos() {
+  return new Promise((resolve, reject) => {
+    axios
+      .get("/pictures")
+      .then(resp => {
+        resolve(resp.data)
+      })
+      .catch(e => {
+        reject()
+      })
+  })
+}

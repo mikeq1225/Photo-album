@@ -7,13 +7,6 @@ import { getAlbums } from "../actions/albums.js"
 export default function(props) {
   const [albums, setAlbums] = useState([])
 
-  // function getAlbums() {
-  //   axios.get("/albums").then(resp => {
-  //     setAlbums(resp.data)
-  //     console.log(resp.data)
-  //   })
-  // }
-
   useEffect(() => {
     getAlbums().then(data => setAlbums(data))
   }, [])
