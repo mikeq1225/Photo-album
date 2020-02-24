@@ -1,6 +1,8 @@
 .picContainer {
   border: 1px solid black;
   margin: 30px 0px;
+  position: relative;
+  background-color: white;
 }
 
 .picContainer h1 {
@@ -29,6 +31,10 @@
   text-align: center;
 }
 
+.flexDiv p:active {
+  color: red;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -46,6 +52,7 @@ a {
 
 .albumNames div {
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .albumNames p {
@@ -55,4 +62,17 @@ a {
 .albumNames img {
   width: 250px;
   height: 200px;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.homeButton2 {
+  font-size: 40px;
+  position: absolute;
+  top: 30px;
+  left: 55px;
+}
+
+.homeButton2:hover {
+  color: lightgray;
+  transition: 0.3s;
 }

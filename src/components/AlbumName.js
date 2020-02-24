@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import "../styles/AlbumName.css"
 import { getAlbum, getAlbums } from "../actions/albums.js"
+import { FaHome } from "react-icons/fa"
 
 export default function(props) {
   const [album, setAlbum] = useState({})
@@ -18,6 +19,9 @@ export default function(props) {
 
   return (
     <div className="picContainer">
+      <Link to="/" className="homeButton2">
+        <FaHome />
+      </Link>
       <h1>{album.name}</h1>
       <div className="flex">
         <div className="flexDiv">
