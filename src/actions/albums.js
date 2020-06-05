@@ -3,9 +3,11 @@ import axios from "axios"
 export function getAlbums() {
 	return new Promise((resolve, reject) => {
 		axios
+			// .get("https://mikeq1225.github.io/PhotoAlbumData/photoAlbumData.json")
 			.get("/albums")
 			// .get("https://api.jsonbin.io/b/5ec44c2f18c8475bf16c68b2")
 			.then((resp) => {
+				console.log(resp.data)
 				resolve(resp.data)
 			})
 			.catch((e) => {
