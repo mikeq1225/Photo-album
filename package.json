@@ -1,11 +1,14 @@
 {
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "name": "Photo-album",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:mikeq1225/Photo-album.git",
-  "author": "Michael Quarne <mikedq1225@gmail.com>",
-  "license": "MIT"
+	"name": "Photo-album",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "git@github.com:mikeq1225/Photo-album.git",
+	"author": "Michael Quarne <mikedq1225@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.17.1"
+	},
+	"scripts": {
+		"start": "node index.js"
+	}
 }
