@@ -7,7 +7,6 @@ export function getAlbums() {
 			.get("/albums")
 			// .get("https://api.jsonbin.io/b/5ec44c2f18c8475bf16c68b2")
 			.then((resp) => {
-				console.log(resp.data)
 				resolve(resp.data)
 			})
 			.catch((e) => {
@@ -22,7 +21,6 @@ export function getAlbum(id) {
 			.get(`/albums/${id}?_embed=pictures`)
 			// .get("https://api.jsonbin.io/b/5ec44c2f18c8475bf16c68b2")
 			.then((resp) => {
-				console.log(resp.data)
 				resolve(resp.data)
 			})
 			.catch((e) => {

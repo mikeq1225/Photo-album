@@ -237,6 +237,18 @@ app.get("/api/albums", (req, res) => {
 	res.json(albums)
 })
 
+app.get("/api/albums/:id", function (req, res, next) {
+	const id = Number(req.params.id)
+	const album = albums.find((album) => album.id === id)
+	const id2 = Number(album.id)
+	const pictures1 = []
+	pictures.map((pics) => {
+		pictures1.push(pics.albumId === id2)
+	})
+	console.log(album)
+	console.log(pictures1)
+})
+
 app.get("/api/pictures", (req, res) => {
 	res.json(pictures)
 })
