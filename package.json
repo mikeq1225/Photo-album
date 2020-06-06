@@ -3,12 +3,13 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"repository": "git@github.com:mikeq1225/Photo-album.git",
-	"author": "Michael Quarne <mikedq1225@gmail.com>",
+	"author": "Michael Quarne",
 	"license": "MIT",
 	"dependencies": {
+		"concurrently": "^5.2.0",
 		"express": "^4.17.1"
 	},
 	"scripts": {
-		"start": "node index.js"
+		"start": "concurrently \"cd client && yarn start\" \"node index.js\" "
 	}
 }

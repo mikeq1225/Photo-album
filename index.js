@@ -233,24 +233,55 @@ const pictures = [
 ]
 
 // Put all API endpoints under '/api'
-app.get("/api/albums", (req, res) => {
+app.get("/albums", (req, res) => {
+	console.log(albums)
 	res.json(albums)
 })
 
-app.get("/api/albums/:id", function (req, res, next) {
+app.get("/api/album/:id", function (req, res) {
 	const id = Number(req.params.id)
-	const album = albums.find((album) => album.id === id)
-	const id2 = Number(album.id)
-	const pictures1 = []
-	pictures.map((pics) => {
-		pictures1.push(pics.albumId === id2)
+	const albumInfo = {
+		album1: [],
+		pictures1: [],
+	}
+
+	albums.map((album) => {
+		if (album.id === id) {
+			albumInfo.album1.push(album)
+		}
 	})
-	console.log(album)
-	console.log(pictures1)
+
+	pictures.map((pic) => {
+		if (pic.albumId === id) {
+			albumInfo.pictures1.push(pic)
+		}
+	})
+	// console.log(albumInfo)
+	res.json(albumInfo)
 })
 
-app.get("/api/pictures", (req, res) => {
-	res.json(pictures)
+app.get("/api/album/:albId/pictures/:picId", function (req, res) {
+	// const picId = Number(req.params.picId)
+	const albumId = Number(req.params.albId)
+	console.log(albumId)
+	const picInfo = {
+		album2: [],
+		pictures2: [],
+	}
+
+	albums.map((album) => {
+		if (album.id === albumId) {
+			picInfo.album2.push(album)
+		}
+	})
+
+	pictures.map((pic) => {
+		if (pic.albumId === albumId) {
+			picInfo.pictures2.push(pic)
+		}
+	})
+	console.log(picInfo)
+	res.json(picInfo)
 })
 
 // The "catchall" handler: for any request that doesn't

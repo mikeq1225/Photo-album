@@ -5,14 +5,14 @@ import MyAlbums from "./MyAlbums"
 import AlbumName from "./AlbumName"
 import PictureName from "./PictureName"
 
-export default function() {
-  return (
-    <Router>
-      <div className="container">
-        <Route exact path="/" component={MyAlbums} />
-        <Route exact path="/album/:id" component={AlbumName} />
-        <Route path="/album/picture/:id" component={PictureName} />
-      </div>
-    </Router>
-  )
+export default function () {
+	return (
+		<Router>
+			<div className="container">
+				<Route exact path="/" component={MyAlbums} />
+				<Route exact path="/album/:id" component={AlbumName} />
+				<Route path="/album/:id/picture/:id" component={PictureName} />
+			</div>
+		</Router>
+	)
 }
