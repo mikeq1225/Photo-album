@@ -3,11 +3,11 @@ import axios from "axios"
 export function getAlbums() {
 	return new Promise((resolve, reject) => {
 		axios
-			.get("https://mikeq1225.github.io/PhotoAlbumData/photoAlbumData.json")
-			// .get("/api/albums")
+			// .get("https://mikeq1225.github.io/PhotoAlbumData/photoAlbumData.json")
+			.get("/api/albums")
 			// .get("https://api.jsonbin.io/b/5ec44c2f18c8475bf16c68b2")
 			.then((resp) => {
-				resolve(resp.data.albums)
+				resolve(resp.data)
 			})
 			.catch((e) => {
 				reject()
@@ -33,7 +33,6 @@ export function getPhoto(albId, picId) {
 		axios
 			.get(`/api/album/${albId}/pictures/${picId}`)
 			.then((resp) => {
-				// console.log(resp.data)
 				resolve(resp.data)
 			})
 			.catch((e) => {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import "../styles/PictureName.css"
-// import { getPhoto, getPhotos } from "../actions/albums"
-import { getAlbum } from "../actions/albums"
+import { getPhoto, getPhotos } from "../actions/albums"
+// import { getAlbum } from "../actions/albums"
 import {
 	FaAngleDoubleRight,
 	FaAngleDoubleLeft,
@@ -13,22 +13,27 @@ import {
 export default function (props) {
 	const [album2, setAlbum1] = useState({})
 	const [albumPics, setAlbumPics] = useState([])
+	const [picture, setPicture] = useState({})
 	const carousel = []
-	const backAlbum = []
+	// const backAlbum = []
 	// let leftScroll = albumPics.id
 	// let rightScroll = albumPics.id
 
+	console.log(picture)
+
 	useEffect(() => {
-		getAlbum(props.match.params.id).then((album) => {
-			setAlbumPics(album.pictures2)
-			console.log(albumPics)
-			setAlbum1(album.album2)
-		})
-		// getPhoto(props.match.params.id).then((photo) => {
-		// 	setPhoto(photo)
-		// })
-		// getPhotos().then((data) => setPhotos(data))
+		getPhoto(props.match.params.albId, props.match.params.picId).then(
+			(pics) => {
+				setAlbumPics(pics.pictures2)
+				setAlbum1(pics.album2[0])
+				setPicture(pics.picture[0])
+			}
+		)
 	}, [props.match.params])
+
+	// albumPics.map((pic) => {
+	// 	carousel.push(pic)
+	// })
 
 	// for (var i = 0; i < albumPics.length; i++) {
 	// 	carousel.push(albumPics[i].id)
@@ -52,7 +57,7 @@ export default function (props) {
 			<Link to="/" className="homeButton">
 				<FaHome />
 			</Link>
-			<h1>{albumPics.name}</h1>
+			<h1>{album2.name}</h1>
 			<Link to={"/album/" + album2.id} className="albumButton">
 				<FaFolderOpen />
 			</Link>
@@ -63,7 +68,7 @@ export default function (props) {
 					</div>
 				</Link> */}
 				<div>
-					<img src={albumPics.url} alt="car" />
+					<img src={picture && picture.url} alt="car" />
 				</div>
 				{/* <Link to={"/album/picture/" + rightScroll}>
 					<div className="arrow">

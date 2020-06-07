@@ -11,7 +11,7 @@ export default function () {
 			<div className="container">
 				<Route exact path="/" component={MyAlbums} />
 				<Route exact path="/album/:id" component={AlbumName} />
-				<Route path="/album/:id/picture/:id" component={PictureName} />
+				<Route path="/album/:albId/pictures/:picId" component={PictureName} />
 			</div>
 		</Router>
 	)

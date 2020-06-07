@@ -233,8 +233,7 @@ const pictures = [
 ]
 
 // Put all API endpoints under '/api'
-app.get("/albums", (req, res) => {
-	console.log(albums)
+app.get("/api/albums", (req, res) => {
 	res.json(albums)
 })
 
@@ -256,17 +255,16 @@ app.get("/api/album/:id", function (req, res) {
 			albumInfo.pictures1.push(pic)
 		}
 	})
-	// console.log(albumInfo)
 	res.json(albumInfo)
 })
 
 app.get("/api/album/:albId/pictures/:picId", function (req, res) {
-	// const picId = Number(req.params.picId)
+	const pictureId = Number(req.params.picId)
 	const albumId = Number(req.params.albId)
-	console.log(albumId)
 	const picInfo = {
 		album2: [],
 		pictures2: [],
+		picture: [],
 	}
 
 	albums.map((album) => {
@@ -278,6 +276,12 @@ app.get("/api/album/:albId/pictures/:picId", function (req, res) {
 	pictures.map((pic) => {
 		if (pic.albumId === albumId) {
 			picInfo.pictures2.push(pic)
+		}
+	})
+
+	pictures.map((item) => {
+		if (item.id === pictureId) {
+			picInfo.picture.push(item)
 		}
 	})
 	console.log(picInfo)

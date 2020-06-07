@@ -12,7 +12,7 @@ export default function (props) {
 	useEffect(() => {
 		getAlbum(props.match.params.id).then((album) => {
 			setPictures(album.pictures1)
-			setAlbum(album.album1)
+			setAlbum(album.album1[0])
 		})
 		getAlbums().then((albums) => setAlbums(albums))
 	}, [props.match.params])
@@ -36,7 +36,7 @@ export default function (props) {
 				<div className="albumNames">
 					{pictures.map((picture) => (
 						<Link
-							to={"/album/" + picture.albumId + "/picture/" + picture.id}
+							to={"/album/" + picture.albumId + "/pictures/" + picture.id}
 							key={"picture" + picture.id}
 						>
 							<div>
