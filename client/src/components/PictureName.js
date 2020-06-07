@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import "../styles/PictureName.css"
-import { getPhoto } from "../actions/albums"
+import { getPhoto, getLinks } from "../actions/albums"
 import {
 	FaAngleDoubleRight,
 	FaAngleDoubleLeft,
@@ -26,19 +26,35 @@ export default function (props) {
 				setPicture(pics.picture[0])
 			}
 		)
+		getLinks(album2.id)
 	}, [props.match.params])
 
-	if (leftScroll === 1) {
-		leftScroll = albumPics.length - 1
-	} else {
-		leftScroll -= 1
-	}
+	albumPics.forEach((photo, i) => {
+		if (photo.id == picture && picture.id) {
+			if (i === albumPics.length - 1) {
+				rightScroll = albumPics[0].id
+				leftScroll = albumPics[i - 1].id
+			} else if (i === 0) {
+				rightScroll = albumPics[i + 1].id
+				leftScroll = albumPics[i - 1].id
+			} else {
+				rightScroll = albumPics[i + 1].id
+				leftScroll = albumPics[i - 1].id
+			}
+		}
+	})
 
-	if (rightScroll === albumPics.length) {
-		rightScroll = 1
-	} else {
-		rightScroll += 1
-	}
+	// if (leftScroll === 1) {
+	// 	leftScroll = albumPics.length - 1
+	// } else {
+	// 	leftScroll -= 1
+	// }
+
+	// if (rightScroll === albumPics.length) {
+	// 	rightScroll = 1
+	// } else {
+	// 	rightScroll += 1
+	// }
 
 	return (
 		<div className="picNames">
