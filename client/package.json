@@ -16,7 +16,7 @@
 		"react-scripts": "3.4.1"
 	},
 	"scripts": {
-		"start": "concurrently \"react-scripts start\" \"json-server -p 3001 db.json\"",
+		"start": "concurrently \"react-scripts start\" \"json-server -p 3003 db.json\"",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
@@ -36,7 +36,7 @@
 			"last 1 safari version"
 		]
 	},
-	"proxy": "http://localhost:3001",
+	"proxy": "http://localhost:3002",
 	"boilerplate": {
 		"name": "boilerplate",
 		"version": "0.1.0"

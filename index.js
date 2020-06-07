@@ -237,8 +237,54 @@ app.get("/api/albums", (req, res) => {
 	res.json(albums)
 })
 
-app.get("/api/pictures", (req, res) => {
-	res.json(pictures)
+app.get("/api/album/:id", function (req, res) {
+	const id = Number(req.params.id)
+	const albumInfo = {
+		album1: [],
+		pictures1: [],
+	}
+
+	albums.map((album) => {
+		if (album.id === id) {
+			albumInfo.album1.push(album)
+		}
+	})
+
+	pictures.map((pic) => {
+		if (pic.albumId === id) {
+			albumInfo.pictures1.push(pic)
+		}
+	})
+	res.json(albumInfo)
+})
+
+app.get("/api/album/:albId/picture/:picId", function (req, res) {
+	const pictureId = Number(req.params.picId)
+	const albumId = Number(req.params.albId)
+	const picInfo = {
+		album2: [],
+		pictures2: [],
+		picture: [],
+	}
+
+	albums.map((album) => {
+		if (album.id === albumId) {
+			picInfo.album2.push(album)
+		}
+	})
+
+	pictures.map((pic) => {
+		if (pic.albumId === albumId) {
+			picInfo.pictures2.push(pic)
+		}
+	})
+
+	pictures.map((item) => {
+		if (item.id === pictureId) {
+			picInfo.picture.push(item)
+		}
+	})
+	res.json(picInfo)
 })
 
 // The "catchall" handler: for any request that doesn't
