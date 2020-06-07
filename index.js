@@ -258,7 +258,7 @@ app.get("/api/album/:id", function (req, res) {
 	res.json(albumInfo)
 })
 
-app.get("/api/album/:albId/pictures/:picId", function (req, res) {
+app.get("/api/album/:albId/picture/:picId", function (req, res) {
 	const pictureId = Number(req.params.picId)
 	const albumId = Number(req.params.albId)
 	const picInfo = {
@@ -284,7 +284,6 @@ app.get("/api/album/:albId/pictures/:picId", function (req, res) {
 			picInfo.picture.push(item)
 		}
 	})
-	console.log(picInfo)
 	res.json(picInfo)
 })
 

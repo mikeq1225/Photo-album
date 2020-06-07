@@ -31,7 +31,7 @@ export function getAlbum(id) {
 export function getPhoto(albId, picId) {
 	return new Promise((resolve, reject) => {
 		axios
-			.get(`/api/album/${albId}/pictures/${picId}`)
+			.get(`/api/album/${albId}/picture/${picId}`)
 			.then((resp) => {
 				resolve(resp.data)
 			})

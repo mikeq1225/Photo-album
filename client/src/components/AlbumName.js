@@ -36,7 +36,7 @@ export default function (props) {
 				<div className="albumNames">
 					{pictures.map((picture) => (
 						<Link
-							to={"/album/" + picture.albumId + "/pictures/" + picture.id}
+							to={"/album/" + picture.albumId + "/picture/" + picture.id}
 							key={"picture" + picture.id}
 						>
 							<div>

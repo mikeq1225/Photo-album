@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import "../styles/PictureName.css"
-import { getPhoto, getPhotos } from "../actions/albums"
-// import { getAlbum } from "../actions/albums"
+import { getPhoto } from "../actions/albums"
 import {
 	FaAngleDoubleRight,
 	FaAngleDoubleLeft,
@@ -14,12 +13,10 @@ export default function (props) {
 	const [album2, setAlbum1] = useState({})
 	const [albumPics, setAlbumPics] = useState([])
 	const [picture, setPicture] = useState({})
-	const carousel = []
-	// const backAlbum = []
-	// let leftScroll = albumPics.id
-	// let rightScroll = albumPics.id
+	let leftScroll = picture.id
+	let rightScroll = picture.id
 
-	console.log(picture)
+	console.log(leftScroll)
 
 	useEffect(() => {
 		getPhoto(props.match.params.albId, props.match.params.picId).then(
@@ -31,26 +28,17 @@ export default function (props) {
 		)
 	}, [props.match.params])
 
-	// albumPics.map((pic) => {
-	// 	carousel.push(pic)
-	// })
+	if (leftScroll === 1) {
+		leftScroll = albumPics.length - 1
+	} else {
+		leftScroll -= 1
+	}
 
-	// for (var i = 0; i < albumPics.length; i++) {
-	// 	carousel.push(albumPics[i].id)
-	// }
-	// backAlbum.push(albumPics.albumId)
-
-	// if (leftScroll === 1) {
-	// 	leftScroll = carousel.length - 1
-	// } else {
-	// 	leftScroll -= 1
-	// }
-
-	// if (rightScroll === carousel.length) {
-	// 	rightScroll = 1
-	// } else {
-	// 	rightScroll += 1
-	// }
+	if (rightScroll === albumPics.length) {
+		rightScroll = 1
+	} else {
+		rightScroll += 1
+	}
 
 	return (
 		<div className="picNames">
@@ -62,19 +50,19 @@ export default function (props) {
 				<FaFolderOpen />
 			</Link>
 			<div className="display">
-				{/* <Link to={"/album/picture/" + leftScroll}>
+				<Link to={"/album/" + album2.id + "/picture/" + leftScroll}>
 					<div className="arrow">
 						<FaAngleDoubleLeft />
 					</div>
-				</Link> */}
+				</Link>
 				<div>
 					<img src={picture && picture.url} alt="car" />
 				</div>
-				{/* <Link to={"/album/picture/" + rightScroll}>
+				<Link to={"/album/" + album2.id + "/picture/" + rightScroll}>
 					<div className="arrow">
 						<FaAngleDoubleRight />
 					</div>
-				</Link> */}
+				</Link>
 			</div>
 		</div>
 	)
