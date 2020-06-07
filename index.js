@@ -233,10 +233,13 @@ const pictures = [
 ]
 
 // Put all API endpoints under '/api'
+
+// gets all albums
 app.get("/api/albums", (req, res) => {
 	res.json(albums)
 })
 
+// gets the albums and pictures associated with each album
 app.get("/api/album/:id", function (req, res) {
 	const id = Number(req.params.id)
 	const albumInfo = {
@@ -258,6 +261,7 @@ app.get("/api/album/:id", function (req, res) {
 	res.json(albumInfo)
 })
 
+// for getting the individual picture and all pictures associated with each album
 app.get("/api/album/:albId/picture/:picId", function (req, res) {
 	const pictureId = Number(req.params.picId)
 	const albumId = Number(req.params.albId)
@@ -285,6 +289,11 @@ app.get("/api/album/:albId/picture/:picId", function (req, res) {
 		}
 	})
 	res.json(picInfo)
+})
+
+// for getting the links to scroll through only pictures in specific album
+app.get("/api/albums", (req, res) => {
+	res.json(albums)
 })
 
 // The "catchall" handler: for any request that doesn't
