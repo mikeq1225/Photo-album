@@ -288,12 +288,8 @@ app.get("/api/album/:albId/picture/:picId", function (req, res) {
 			picInfo.picture.push(item)
 		}
 	})
-	res.json(picInfo)
-})
 
-// for getting the links to scroll through only pictures in specific album
-app.get("/api/albums", (req, res) => {
-	res.json(albums)
+	res.json(picInfo)
 })
 
 // The "catchall" handler: for any request that doesn't
