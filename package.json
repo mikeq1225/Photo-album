@@ -10,6 +10,7 @@
 		"express": "^4.17.1"
 	},
 	"scripts": {
-		"start": "concurrently \"cd client && yarn start\" \"node index.js\" "
+		"start": "concurrently \"cd client && yarn start\" \"node index.js\" ",
+		"heroku-postbuild": "cd client && yarn && yarn run build"
 	}
 }
