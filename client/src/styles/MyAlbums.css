@@ -1,45 +1,45 @@
 .albumContainer {
-  border: 1px solid black;
-  margin: 30px;
-  background-color: white;
+	border: 1px solid black;
+	margin: 30px;
+	background-color: grey;
 }
 
 .albumContainer h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: gray;
-  height: 100px;
-  font-size: 40px;
-  text-transform: capitalize;
-  padding: 0;
-  margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: gray;
+	height: 100px;
+	font-size: 40px;
+	text-transform: capitalize;
+	padding: 0;
+	margin: 0;
 }
 
 .albumCover {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 40px 20px;
-  justify-items: center;
-  padding: 40px 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 40px 20px;
+	justify-items: center;
+	padding: 40px 20px;
 }
 
 .albumCover div {
-  border: 1px solid black;
-  padding: 0px 5px;
-  border-radius: 5px;
+	border: 1px solid black;
+	padding: 0px 5px;
+	border-radius: 5px;
 }
 
 .albumCover p {
-  text-align: center;
+	text-align: center;
 }
 
 .albumCover img {
-  width: 200px;
-  height: 200px;
+	width: 200px;
+	height: 200px;
 }
 
 .albumCover a {
-  text-decoration: none;
-  color: black;
+	text-decoration: none;
+	color: black;
 }
