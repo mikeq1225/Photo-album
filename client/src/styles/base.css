@@ -1,5 +1,6 @@
 html {
 	box-sizing: border-box;
+	font-size: 10px;
 }
 
 *,
@@ -15,12 +16,6 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url("/background.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
+	background: url("/background.jpg") no-repeat center center/cover;
+	min-height: 100vh;
 }
