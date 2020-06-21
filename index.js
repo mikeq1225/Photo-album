@@ -36,7 +36,7 @@ const albums = [
 		id: 5,
 	},
 	{
-		name: "Eleanor",
+		name: '1967 Mustang "Eleanor"',
 		coverPhoto:
 			"https://www.brandnewmusclecar.com/assets/GONE_IN_60_SECONDS_Logo-Met36326.png",
 		id: 6,

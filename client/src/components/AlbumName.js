@@ -19,10 +19,12 @@ export default function (props) {
 
 	return (
 		<div className="picContainer">
-			<Link to="/" className="homeButton2">
-				<FaHome />
-			</Link>
-			<h1>{album.name}</h1>
+			<div className="header">
+				<Link to="/" className="homeButton2">
+					<FaHome />
+				</Link>
+				<h1>{album.name}</h1>
+			</div>
 			<div className="flex">
 				<div className="flexDiv">
 					{albums.map((album) => (
