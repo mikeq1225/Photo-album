@@ -8,7 +8,7 @@ import PictureName from "./PictureName"
 export default function () {
 	return (
 		<Router>
-			<div className="container">
+			<div>
 				<Route exact path="/" component={MyAlbums} />
 				<Route exact path="/album/:id" component={AlbumName} />
 				<Route path="/album/:albId/picture/:picId" component={PictureName} />

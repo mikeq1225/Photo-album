@@ -1,78 +1,130 @@
 .picContainer {
-  border: 1px solid black;
-  margin: 30px 0px;
-  position: relative;
-  background-color: white;
+	max-width: 1000px;
+	border: 1px solid black;
+	margin: 30px auto 0px;
+	position: relative;
+	background-color: white;
+}
+
+.picContainer .header {
+	min-height: 15vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: gray;
+}
+.homeButton2 {
+	font-size: 4rem;
+	margin: 0 0 0 5%;
 }
 
 .picContainer h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: gray;
-  height: 100px;
-  font-size: 40px;
-  text-transform: capitalize;
-  padding: 0;
-  margin: 0;
+	font-size: 4rem;
+	text-transform: capitalize;
+	margin: 0 25% 0 0;
 }
 
 .flex {
-  display: flex;
+	display: flex;
 }
 
-.flexDiv {
-  display: flex;
-  flex-direction: column;
-  width: 150px;
-  padding: 10px 15px;
-  justify-items: center;
-  border-right: 1px solid black;
-  text-align: center;
+.flex .flexDiv {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 150px;
+	padding: 10px;
+	border-right: 1px solid black;
+	text-align: center;
 }
 
-.flexDiv p:active {
-  color: red;
+.flex .flexDiv div {
+	width: 100%;
+}
+
+.flex .flexDiv p:active {
+	color: red;
 }
 
 a {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
+	text-decoration: none;
+	color: black;
+	font-size: 1.8rem;
 }
 
 .albumNames {
-  flex-grow: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 40px 20px;
-  justify-items: center;
-  padding: 40px 20px;
+	flex-grow: 2;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 40px 20px;
+	justify-items: center;
+	padding: 40px 20px;
 }
 
 .albumNames div {
-  border: 1px solid black;
-  border-radius: 5px;
+	width: 100%;
+	border: 1px solid black;
+	border-radius: 5px;
 }
 
 .albumNames p {
-  text-align: center;
+	text-align: center;
 }
 
 .albumNames img {
-  width: 250px;
-  height: 200px;
-  border-radius: 3px 3px 0px 0px;
-}
-
-.homeButton2 {
-  font-size: 40px;
-  position: absolute;
-  top: 30px;
-  left: 55px;
+	width: 100%;
+	border-radius: 3px 3px 0px 0px;
 }
 
 .homeButton2:hover {
-  color: lightgray;
-  transition: 0.3s;
+	color: lightgray;
+	transition: 0.3s;
+}
+
+@media (max-width: 767px) {
+	.picContainer {
+		margin: 2rem;
+		display: flex;
+		flex-direction: column;
+		border: none;
+	}
+
+	.picContainer .header {
+		padding: 0px 5px;
+	}
+
+	.picContainer h1 {
+		font-size: 3rem;
+		margin: 0;
+	}
+
+	.homeButton2 {
+		font-size: 3rem;
+		margin: 0 8% 0 2%;
+	}
+
+	.flex {
+		flex-direction: column-reverse;
+	}
+
+	.flex .flexDiv {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.flex .albumNames {
+		flex-grow: 0;
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+	}
+
+	.flex .albumNames a {
+		margin: 10px 0px 0px 0px;
+	}
+}
+
+@media (max-height: 500px) {
+	.picContainer {
+		margin: 20px 75px;
+	}
 }
