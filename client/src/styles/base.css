@@ -20,3 +20,8 @@ body {
 	background: url("/background.jpg") no-repeat center center/cover;
 	min-height: 100vh;
 }
+
+a {
+	text-decoration: none;
+	color: black;
+}
