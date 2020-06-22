@@ -43,26 +43,30 @@ export default function (props) {
 
 	return (
 		<div className="picNames">
-			<Link to="/" className="homeButton">
-				<FaHome />
-			</Link>
-			<h1>{album2.name}</h1>
-			<Link to={"/album/" + album2.id} className="albumButton">
-				<FaFolderOpen />
-			</Link>
+			<div className="header2">
+				<Link to="/" className="homeButton">
+					<FaHome />
+				</Link>
+				<h1>{album2.name}</h1>
+				<Link to={"/album/" + album2.id} className="albumButton">
+					<FaFolderOpen />
+				</Link>
+			</div>
 			<div className="display">
-				<Link to={"/album/" + album2.id + "/picture/" + leftScroll}>
-					<div className="arrow">
-						<FaAngleDoubleLeft />
-					</div>
+				<Link
+					className="arrow"
+					to={"/album/" + album2.id + "/picture/" + leftScroll}
+				>
+					<FaAngleDoubleLeft />
 				</Link>
 				<div>
 					<img src={picture && picture.url} alt="car" />
 				</div>
-				<Link to={"/album/" + album2.id + "/picture/" + rightScroll}>
-					<div className="arrow">
-						<FaAngleDoubleRight />
-					</div>
+				<Link
+					className="arrow"
+					to={"/album/" + album2.id + "/picture/" + rightScroll}
+				>
+					<FaAngleDoubleRight />
 				</Link>
 			</div>
 		</div>

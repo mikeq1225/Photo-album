@@ -43,7 +43,7 @@
 	height: 250px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 812px) {
 	.albumContainer {
 		margin: 2rem;
 	}

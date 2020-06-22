@@ -18,6 +18,11 @@
 	margin: 0 0 0 5%;
 }
 
+.homeButton2:hover {
+	color: lightgray;
+	transition: 0.3s;
+}
+
 .picContainer h1 {
 	font-size: 4rem;
 	text-transform: capitalize;
@@ -45,10 +50,13 @@
 	color: red;
 }
 
-a {
-	text-decoration: none;
-	color: black;
+.flex .flexDiv div a {
 	font-size: 1.8rem;
+}
+
+.flex .flexDiv div a:hover {
+	color: darkgray;
+	transition: 0.3s;
 }
 
 .albumNames {
@@ -72,15 +80,11 @@ a {
 
 .albumNames img {
 	width: 100%;
+	height: 200px;
 	border-radius: 3px 3px 0px 0px;
 }
 
-.homeButton2:hover {
-	color: lightgray;
-	transition: 0.3s;
-}
-
-@media (max-width: 767px) {
+@media (max-width: 812px) {
 	.picContainer {
 		margin: 2rem;
 		display: flex;
@@ -90,6 +94,7 @@ a {
 
 	.picContainer .header {
 		padding: 0px 5px;
+		justify-content: flex-start;
 	}
 
 	.picContainer h1 {
@@ -99,7 +104,7 @@ a {
 
 	.homeButton2 {
 		font-size: 3rem;
-		margin: 0 8% 0 2%;
+		margin: 0 9% 0 2%;
 	}
 
 	.flex {
@@ -126,5 +131,10 @@ a {
 @media (max-height: 500px) {
 	.picContainer {
 		margin: 20px 75px;
+	}
+
+	.albumNames img {
+		width: 100%;
+		height: 300px;
 	}
 }
